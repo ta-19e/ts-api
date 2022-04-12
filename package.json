@@ -23,7 +23,7 @@
     "build": "rimraf dist && tsc",
     "start": "nodemon src/main.ts",
     "test": "jest .",
-    "lint": "eslint 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "eslint --ext '.ts' --ext '.js' .",
     "fix": "npm run lint -- --fix"
   },
   "dependencies": {
