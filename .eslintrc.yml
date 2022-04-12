@@ -1,0 +1,40 @@
+env:
+  es6: true
+  node: true
+extends:
+  - airbnb-base
+  - plugin:@typescript-eslint/recommended
+  - prettier
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parser: '@typescript-eslint/parser'
+settings:
+  import/resolver:
+    node:
+      extensions:
+      - ".js"
+      - ".jsx"
+      - ".ts"
+      - ".tsx"
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+plugins:
+  - '@typescript-eslint'
+  - 'prettier'
+rules:
+  # TODO: remove once better logger added
+  no-console: off
+
+  # use prettier
+  prettier/prettier: "error"
+
+  # https://stackoverflow.com/a/59268871
+  import/extensions:
+    - error
+    - ignorePackages
+    - js: never
+      jsx: never
+      ts: never
+      tsx: never

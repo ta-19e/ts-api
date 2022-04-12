@@ -1,0 +1,7 @@
+#
+# For syntax please refer to official documentation:
+# https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-code-owners#example-of-a-codeowners-file
+#
+
+*   @eritikass
+

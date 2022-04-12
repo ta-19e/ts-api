@@ -1,0 +1,9 @@
+---
+printWidth: 130
+singleQuote: true
+tabWidth: 2
+useTabs: false
+bracketSpacing: true
+arrowParens: avoid
+endOfLine: lf
+trailingComma: all

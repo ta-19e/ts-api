@@ -1,0 +1,16 @@
+{
+  "name": "ts-api",
+  "description": "",
+  "ownerTeam": "xxxx",
+  "clusters": [
+    "staging",
+    "review",
+    "production",
+    "production_us"
+  ],
+  "usesAmq": false,
+  "dataApiCerts": false,
+  "exposesHttp": true,
+  "port": 3000,
+  "__generatorVersion": "fc95e3ad33c7c374002c5fe4e0d5305aa7d0d127"
+}
