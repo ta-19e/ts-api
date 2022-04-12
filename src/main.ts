@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 
 import sum from './sum';
 import double from './double';
+import cube from './cube';
 
 const port: number = parseInt(String(process.env.PORT || 3000), 10);
 const app: Express = express();
@@ -21,6 +22,9 @@ app.get('/', (req: Request, res: Response) =>
   </ul>
   <ul>
     <a href="/double/12">12(double)=?</a>
+  </ul>
+  <ul>
+   <a href="/cube/5">5(cube)=?</a>
   </ul>
 </li>
 `,
@@ -41,6 +45,14 @@ app.get('/double/:number/', (req: Request, res: Response) => {
   res.json({
     number,
     double: double(+number),
+  });
+});
+
+app.get('/cube/:number/', (req: Request, res: Response) => {
+  const { number } = req.params;
+  res.json({
+    number,
+    'the power of 3': cube(+number),
   });
 });
 
