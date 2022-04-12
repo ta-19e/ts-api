@@ -8,9 +8,3 @@ describe('sum', () => {
     expect(subtract(3, 1)).toBe(2);
   });
 });
-
-describe('example', () => {
-  it('5 - 4 = 1', () => {
-    expect(5 - 4).toBe(1);
-  });
-});
