@@ -1,10 +1,10 @@
-FROM node:14
+FROM node:12
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm ci --production
+RUN npm install --production
 
 EXPOSE 3000
 
