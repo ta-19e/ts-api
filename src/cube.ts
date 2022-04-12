@@ -1,4 +1,4 @@
 export default (a: number): number => {
-  const b = a * a * a;
+  const b = a ** 3;
   return b;
 };
