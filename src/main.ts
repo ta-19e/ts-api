@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 
 import sum from './sum';
 import double from './double';
+import subtract from './subtract';
 
 const port: number = parseInt(String(process.env.PORT || 3000), 10);
 const app: Express = express();
@@ -21,6 +22,9 @@ app.get('/', (req: Request, res: Response) =>
   </ul>
   <ul>
     <a href="/double/12">12(double)=?</a>
+  </ul>
+  <ul>
+    <a href="/subtract/10/7">10-7=?</a>
   </ul>
 </li>
 `,
@@ -41,6 +45,15 @@ app.get('/double/:number/', (req: Request, res: Response) => {
   res.json({
     number,
     double: double(+number),
+  });
+});
+
+app.get('/subtract/:a/:b', (req: Request, res: Response) => {
+  const { a, b } = req.params;
+  res.json({
+    a,
+    b,
+    subtract: subtract(+a, +b),
   });
 });
 
