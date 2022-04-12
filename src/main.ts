@@ -1,19 +1,19 @@
-import express from 'express';
+import express, { Express, Request, Response } from 'express';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
 
 import sum from './sum';
 
 const port: number = parseInt(String(process.env.PORT || 3000), 10);
-const app = express();
+const app: Express = express();
 
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send(`Hello World! <a href="/sum/2/3">2+3=?</a>`));
+app.get('/', (req: Request, res: Response) => res.send(`Hello World! <a href="/sum/2/3">2+3=?</a>`));
 
-app.get('/sum/:a/:b', (req, res) => {
+app.get('/sum/:a/:b', (req: Request, res: Response) => {
   const { a, b } = req.params;
   res.json({
     a,
@@ -23,7 +23,7 @@ app.get('/sum/:a/:b', (req, res) => {
 });
 
 let ready = true;
-app.get('/_status', (req, res) => {
+app.get('/_status', (req: Request, res: Response) => {
   if (!ready) {
     res.status(503);
   }
